@@ -1,0 +1,23 @@
+.LogginContainer{
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    grid-template-areas: "img txt";
+}
+
+.LogginContainer img{
+    min-height: 100vh;
+}
+
+.LogginImg{
+    grid-area: img;
+}
+
+.LogginDescription{
+    grid-area: txt;
+    align-self: center;
+}
+
+.LogginDescription button{
+    cursor: pointer;
+    padding: 24px;
+}
