@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 50% 1fr;
     grid-template-areas: "img txt";
+    background-color: #9CBBB6;
 }
 
 .LogginContainer img{
@@ -17,7 +18,7 @@
     align-self: center;
 }
 
-.LogginDescription button{
+.LogginDescription a{
     cursor: pointer;
     padding: 24px;
 }
