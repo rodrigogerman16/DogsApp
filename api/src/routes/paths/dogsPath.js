@@ -51,7 +51,7 @@ dogsPath.post('/',async (req, res) =>{
             createdInDb,
             temperaments
         } = req.body        
-        
+
         const newDog = await Dog.create({
             name,
             weightMin,
@@ -63,7 +63,6 @@ dogsPath.post('/',async (req, res) =>{
             image,
             createdInDb,
         })        
-
         temperaments.forEach(async (e)=>{
             const [temperDB, created] = await Temper.findOrCreate({
                 where: {
