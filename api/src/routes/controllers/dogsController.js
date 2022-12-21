@@ -1,4 +1,5 @@
-const axios = require('axios')
+const axios = require('axios');
+const db = require('../../db');
 const {API_KEY} = process.env
 const {Dog, Temper} = require('../../db')
 
@@ -23,16 +24,24 @@ const getApiInfo = async() =>{
 }
 
 const getDbInfo = async() =>{
-    return await Dog.findAll({
+    const instance = await Dog.findAll({
         include:{
             model: Temper,
             attributes: ['name'],
             through:{
                 attributes: [],
             },
-        }
+        },
+        plain: true
     })
+    const data = JSON.parse(JSON.stringify(instance))
+    const dogs = {...data, temper: data.tempers.map(obj => obj.name)}
+    delete dogs.tempers
+    return dogs
+
+    //serializacion
 }
+
 
 const getAllDogs = async() =>{
     const apiInfo = await getApiInfo();
