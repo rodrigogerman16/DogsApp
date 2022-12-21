@@ -1,4 +1,5 @@
 import style from './Loggin.module.css'
+import { Link } from 'react-router-dom'
 
 const Loggin = () =>{
     return(
@@ -10,7 +11,7 @@ const Loggin = () =>{
                 <h2>Hi DogLover!</h2>
                 <p>Do you want to search dogs and know more about them?</p>
                 <p>This is the webpage for you</p>
-                <button>JOIN</button>
+                <Link to='home'>JOIN</Link>
             </div>
         </div>  
     )
