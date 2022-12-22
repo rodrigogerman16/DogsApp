@@ -26,7 +26,6 @@ function rootReducer(state = initialState, action){
         };
 
         case GET_DOGS_BY_NAME: 
-        if(typeof action.payload !== 'object') alert(action.payload);
         let dogFounded = typeof action.payload === 'object' ? action.payload : state.allDogs;
         return{
             ...state,
