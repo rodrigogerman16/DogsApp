@@ -1,7 +1,7 @@
 import './App.css';
 import Loggin from './Components/Loggin/Loggin';
 import Home from './Components/Home/Home';
-import DogDetail from './Components/Dog/Dog';
+import DogDetail from './Components/DogDetail/DogDetail';
 import CreateDog from './Components/CreateDog/CreateDog';
 import NotFound from './Components/NotFound/NotFound';
 import { Switch, Route } from 'react-router-dom';
