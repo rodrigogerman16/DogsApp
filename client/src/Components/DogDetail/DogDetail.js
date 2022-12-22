@@ -2,7 +2,7 @@ import style from './DogDetail.module.css'
 
 const DogDetail = () =>{
     return(
-        <div>
+        <div className={style.DogDetailContainer}>
             DogDetail Component
         </div>
     )
