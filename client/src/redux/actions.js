@@ -27,7 +27,7 @@ export function getDogs(name){
         } catch (error) {
             dispatch({
                 type: GET_DOGS_BY_NAME,
-                payload: error.response.data
+                payload: error.response
             })
         }
        
@@ -45,7 +45,7 @@ export function getDogDetail(id){
         } catch (error) {
             dispatch({
                 type: GET_DOG_DETAIL,
-                payload: error.response.data
+                payload: error.response
             })
         }
         
@@ -55,7 +55,7 @@ export function getDogDetail(id){
 export function getTemperaments(){
     return async function(dispatch){
         try {
-            const temps = await axios.get('http://localhost3001/temps');
+            const temps = await axios.get('http://localhost3001/temps');     
             return dispatch({
                 type: GET_TEMPERAMENTS,
                 payload: temps.data
@@ -63,11 +63,11 @@ export function getTemperaments(){
         } catch (error) {
             dispatch({
                 type: GET_TEMPERAMENTS,
-                payload: error.response.data
+                payload: error.response
             })
         }
     }
-}
+} 
 
 export function createDog(payload){
     return async function(dispatch){
@@ -80,7 +80,7 @@ export function createDog(payload){
         } catch (error) {
             dispatch({
                 type: CREATE_DOG,
-                payload: error.response.data
+                payload: error.response
             })
         }
     }
