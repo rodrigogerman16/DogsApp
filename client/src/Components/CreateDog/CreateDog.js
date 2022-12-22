@@ -2,7 +2,7 @@ import style from './CreateDog.module.css'
 
 const CreateDog = () =>{
     return(
-        <div>
+        <div className={style.CreateDogContainer}>
             CreateDog Component
         </div>
     )
