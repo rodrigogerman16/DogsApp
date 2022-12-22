@@ -5,7 +5,7 @@ const Loggin = () =>{
     return(
         <div className={style.LogginContainer}>
             <div className={style.LogginImg}>
-                <img src='./loggin1.png' alt='Dog Image'/>  
+                <img src='./loggin1.png' alt='Dogs'/>  
             </div>
             <div className={style.LogginDescription}>
                 <h2>Hi DogLover!</h2>
