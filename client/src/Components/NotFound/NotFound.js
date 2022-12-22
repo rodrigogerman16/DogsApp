@@ -3,7 +3,7 @@ import style from './NotFound.module.css'
 
 const NotFound = () =>{
     return(
-        <div>
+        <div className={style.NotFoundContainer}>
             <div>
                 <h2>Are you Lost?</h2>
             </div>
