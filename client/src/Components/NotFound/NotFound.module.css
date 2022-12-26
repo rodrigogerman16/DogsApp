@@ -1,3 +1,22 @@
 .NotFoundContainer{
-    background: black;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: #0CCBFF;
+   gap: 2em;
+   font-family: 'JelleeBold';
+   color: black
+}
+
+.NotFoundContainer img{
+    width: 320px;
+}
+
+
+.NotFoundDescription a{
+    text-decoration: none;
+    color:black;
+    cursor: pointer;
 }

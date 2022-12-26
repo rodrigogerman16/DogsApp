@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom';
-import style from './NotFound.module.css'
+import style from './NotFound.module.css';
+import image from '../Img/notfound.jpg'
 
 const NotFound = () =>{
     return(
         <div className={style.NotFoundContainer}>
-            <div>
-                <h2>Are you Lost?</h2>
+            <div className={style.NotFoundDescription}>
+                <h2>You fall into space!</h2>
+                <Link to='/home'>Go back</Link>
             </div>
             <div>
-                <Link to='/home'>Go back</Link>
+                <img src={image}/>
             </div>
         </div>
     )
