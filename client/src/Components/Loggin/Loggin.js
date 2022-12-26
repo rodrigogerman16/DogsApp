@@ -1,11 +1,12 @@
 import style from './Loggin.module.css'
 import { Link } from 'react-router-dom'
+import image from '../Img/Loggin.jpg'
 
 const Loggin = () =>{
     return(
         <div className={style.LogginContainer}>
             <div className={style.LogginImg}>
-                <img src='./loggin1.png' alt='Dogs'/>  
+                <img src={image} alt='Dogs'/>  
             </div>
             <div className={style.LogginDescription}>
                 <h2>Hi DogLover!</h2>
