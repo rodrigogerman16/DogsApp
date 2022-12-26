@@ -13,13 +13,13 @@ export function getDogs(name){
     return async function(dispatch){
         try {
             if(name){
-                const dogsName = await axios.get(`http://localhost.3001/dogs?name=${name}`)
+                const dogsName = await axios.get(`http://localhost:3001/dogs?name=${name}`)
                 return dispatch({
                     type: GET_DOGS_BY_NAME,
                     payload: dogsName.data
                 })
             }
-            const dogs = await axios.get('http://localhost.3001/dogs');
+            const dogs = await axios.get('http://localhost:3001/dogs');
             return dispatch({
                 type: GET_DOGS,
                 payload: dogs.data
@@ -37,7 +37,7 @@ export function getDogs(name){
 export function getDogDetail(id){
     return async function(dispatch){
         try {
-            const dog = await axios.get(`http://localhost3001/dogs/${id}`)
+            const dog = await axios.get(`http://localhost:3001/dogs/${id}`)
             return dispatch({
                 type: GET_DOG_DETAIL,
                 payload: dog.data
@@ -55,7 +55,7 @@ export function getDogDetail(id){
 export function getTemperaments(){
     return async function(dispatch){
         try {
-            const temps = await axios.get('http://localhost3001/temps');     
+            const temps = await axios.get('http://localhost:3001/temps');     
             return dispatch({
                 type: GET_TEMPERAMENTS,
                 payload: temps.data
