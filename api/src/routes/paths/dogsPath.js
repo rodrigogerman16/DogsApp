@@ -16,9 +16,9 @@ dogsPath.get('/', async(req, res) =>{
         }
         else{
             res.status(200).send(allDogs)
-        }        
+        }
     } catch (error) {
-        res.status(400).send({error: error.message})
+        res.status(500).send({error: error.message})
     }
 })
 
@@ -33,7 +33,7 @@ dogsPath.get('/:id', async(req, res)=>{
             res.status(404).send('Dog not found');
         }
     } catch (error) {
-        res.status(400).send({error: error.message})
+        res.status(500).send({error: error.message})
     }
 })
 
@@ -74,7 +74,7 @@ dogsPath.post('/',async (req, res) =>{
 
         res.status(201).send({...newDog.dataValues, temper: temperaments})
     } catch (error) {
-        res.status(400).send({error: error.message})
+        res.status(500).send({error: error.message})
     }    
 })
 
