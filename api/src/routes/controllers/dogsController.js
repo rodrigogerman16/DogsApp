@@ -24,21 +24,18 @@ const getApiInfo = async() =>{
 }
 
 const getDbInfo = async() =>{
-    const instance = await Dog.findAll({
-        include:{
-            model: Temper,
-            attributes: ['name'],
-            through:{
-                attributes: [],
-            },
-        },
-        plain: true
-    })
+    const instance = await Dog.findAll({ include: { all: true, nested: true }});
     const data = JSON.parse(JSON.stringify(instance))
-    const dogs = {...data, temper: data.tempers.map(obj => obj.name)}
-    delete dogs.tempers
-    return dogs
+    if(data === null) {
+        return []
+    }
+    const dogs = data.map(dbDog => {
+        const dog = {...dbDog, temper: dbDog.tempers.map(t => t.name)}
+        delete dog.tempers
+        return dog
+    })
 
+    return dogs
     //serializacion
 }
 
