@@ -22,7 +22,7 @@ const DogDetail = (props) =>{
             <div className={style.DogDetailContainer}>
                 <div className={style.DogDetail}>
                     <div> 
-                        <img src={dog.image}/>
+                        <img src={dog.image} alt='Dog Profile'/>
                     </div>
                     <div>
                         <h2>{dog.name}</h2> 
