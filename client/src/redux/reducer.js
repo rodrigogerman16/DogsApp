@@ -69,7 +69,7 @@ function rootReducer(state = initialState, action){
         
         case SORT_BY_WEIGHT:
             const actualDogs = state.dogs
-            const sortedWeight = action.payload === 'asc' ?            
+            const sortedWeight = action.payload === "asc" ?            
             actualDogs.sort(function(a,b) {
                 return a.weightMin - b.weightMin;
             }) :
