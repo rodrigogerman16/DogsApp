@@ -1,39 +1,13 @@
 .HomeContainer{
     background-image: url(../Img/homebackground.jpg);
     background-size: 500px;
+    min-height: 100vh;
 }
 
 .AllDogsContainer{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 350px));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 320px));
     gap: 2em;
     justify-content: center;
-}
-
-.NavBarContainer{
-    display: flex;
-    gap: 0.5em;
-    justify-content: center;
-    align-items: center;
-    padding: 2em 0;    
-    background-color:  rgb(177, 219, 223, 0.2);
-    backdrop-filter: blur(10px);
-    margin-bottom: 2em;
-}
-
-.NavBarContainer select{
-    height: 21.33px;
-}
-
-.NavBarContainer a{
-    display: flex;
-    align-items: center;
-    height: 21.33px;
-    text-decoration: none;
-    color: black;
-    border: solid 1px black;
-    padding: 0 0.5em;
-    border-radius: 20px;
-    font-weight: bold;
-    cursor: pointer;
+    padding: 0 1em;
 }
