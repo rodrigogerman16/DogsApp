@@ -32,7 +32,7 @@ tempPath.get('/', async (req, res) =>{
             }
         });
         const allTemps = await Temper.findAll();
-        res.status(200).send(allTemps); 
+        res.status(200).send(allTemps);
 
     }catch(error){
         res.status(400).send({error: error.message})
