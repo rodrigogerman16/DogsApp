@@ -10,7 +10,7 @@ const NotFound = () =>{
                 <Link to='/home'>Go back</Link>
             </div>
             <div>
-                <img src={image}/>
+                <img src={image} alt='Dog In Space'/>
             </div>
         </div>
     )
