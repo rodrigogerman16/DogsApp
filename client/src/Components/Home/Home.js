@@ -1,73 +1,57 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {
     getDogs,
     getTemperaments,
     //createDog,
-    //filterByTemp,
-    //filterByStored,
-    //sortByName,
-    //sortByWeight
 } from '../../redux/actions';
-import { Link } from "react-router-dom";
 import DogCard from "../DogCard/DogCard";
 import image from '../Img/dog.png'
 import style from './Home.module.css';
 import Loading from '../Loading/Loading';
+import Pagination from '../Pagination/Pagination';
+import NavBar from '../NavBar/NavBar';
 
 const Home = () =>{
 
     const dispatch = useDispatch();
 
+    const allDogs = useSelector(state => state.dogs);  
+    
+    const [/*_orden*/, setOrden] = useState('');   
+
+    //Pagination States
+    const[currentPage, setCurrentPage] = useState(1);
+    const[postPerPage] = useState(8)
+    //
+
+    //Get current Cards
+    const indexOfLastPost = currentPage * postPerPage;
+    const indexOfFirstPost = indexOfLastPost - postPerPage;
+    const currentPosts = allDogs.slice(indexOfFirstPost, indexOfLastPost);
+    //
+
+    //Change page
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    //    
+    
     useEffect(() =>{
         dispatch(getDogs())
         dispatch(getTemperaments())
     },[dispatch])
 
-    const allDogs = useSelector(state => state.dogs); 
-    const allTemps = useSelector(state => state.temperaments);
-
     return(
         <div>
-            {allDogs.length >1 ?
-            <div className={style.HomeContainer}> 
-                <div className={style.NavBarContainer}>
-                    <div>
-                        <input type='search' name='searchBreed' placeholder="Breed..."></input>
-                        <button>Search</button>
-                    </div>
-                    <div>
-                        <select name='breedSelect' className={style.Aux}>
-                            <option value="" selected disabled hidden>Breeds</option>
-                            <option value="api">API</option>
-                            <option value="created">Created</option>
-                        </select>
-                    </div>
-                    <div>
-                        <select name='tempSelect'>
-                            <option value="" selected disabled hidden>Temperaments</option>
-                            <option value="temper">All</option>
-                            {allTemps.map(temp => <option value="breed" key={temp.id}>{temp.name}</option>)}
-                        </select>
-                    </div>
-                    <div>
-                        <select name='sortSelect'>
-                            <option value="" selected disabled hidden>Sort By</option>
-                            <option value="asc">Alphabetic A-Z</option>
-                            <option value="desc">Alphabetic Z-A</option>
-                            <option value="asc">+ Weight</option>
-                            <option value="desc">- Weight</option>
-                        </select>
-                    </div>
-                    <Link to='/create'>
-                        <div>
-                            <p>Create New Dog</p>
-                        </div>
-                    </Link>
-                </div>
+            {allDogs.length ?
+
+            <div className={style.HomeContainer}>                 
+                <NavBar 
+                    setCurrentPage={setCurrentPage}
+                    setOrden={setOrden} 
+                />
                 
                 <div className={style.AllDogsContainer}>
-                    {allDogs.map(dog => (<DogCard 
+                    {currentPosts.map(dog => (<DogCard 
                         key={dog.id}
                         id={dog.id}
                         name={dog.name}
@@ -81,7 +65,14 @@ const Home = () =>{
                         temperaments={dog.temper}                 
                     />))}
                 </div>
+
+                <Pagination 
+                postPerPage={postPerPage}
+                totalPosts={allDogs.length}
+                paginate={paginate}
+                />
             </div>
+            
             : <Loading/>
             }
         </div>
