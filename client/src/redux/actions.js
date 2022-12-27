@@ -89,27 +89,27 @@ export function createDog(payload){
 export function filterByTemp(payload){
     return{
         type: FILTER_BY_TEMP,
-        action: payload
+        payload: payload
     }
 }
 
 export function filterByStored(payload){
     return{
         type: FILTER_BY_STORED,
-        action: payload
+        payload: payload
     }
 }
 
 export function sortByName(payload){
     return{
         type: SORT_BY_NAME,
-        action: payload
+        payload: payload
     }
 }
 
 export function sortByWeight(payload){
     return{
         type: SORT_BY_WEIGHT,
-        action: payload
+        payload: payload
     }
 }
