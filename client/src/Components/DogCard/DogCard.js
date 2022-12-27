@@ -10,16 +10,16 @@ const DogCard = ({name, temperaments, image, weightMin, weightMax, id}) =>{
                     <img src={image ? image : imageSecondary} alt='Dog Profile'/>
                 </div>
                 <div className={style.DogCardDescription}>
-                <Link to={`/dog/${id}`}><h2>{name}</h2></Link>
-                <p>{temperaments && typeof temperaments[0] === 'object'? temperaments?.map(t=>(
-                 t.name + ', '
-                )):temperaments?.join(', ')}</p>
-                {console.log(temperaments)}
-                <div className={style.DogCardWeight}>
-                    <p>Min Weight: {weightMin}kg</p>
-                    <p>Max Weight: {weightMax}kg</p>
-                </div>                    
-                </div>           
+                    <h2>{name}</h2>
+                    <p>{temperaments && typeof temperaments[0] === 'object'? temperaments?.map(t=>(
+                    t.name + ', '
+                    )):temperaments?.join(', ')}</p>
+                    <div className={style.DogCardWeight}>
+                        <span className={style.WeightLeft}>Min Weight: {weightMin}kg</span>
+                        <span className={style.WeightRight}>Max Weight: {weightMax}kg</span>
+                    </div>                                        
+                </div>   
+                <Link to={`/dog/${id}`}><h4>More Info</h4></Link>                        
             </div>
        
     )
