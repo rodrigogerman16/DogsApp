@@ -1,9 +1,11 @@
 .DogDetailContainer{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1000px));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 470px));
     height: 100vh;
     justify-content: center;
-    margin: 0 2em;
+    background-image: url(../Img/homebackground.jpg);
+    background-size: 500px;  
+    padding: 0 2em;
 }
 
 .DogDetail{
@@ -12,19 +14,41 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    border: solid 1px black;
+    border: solid 2px black;
     border-radius: 6px;
     padding: 0 0 2em;
+    backdrop-filter: blur(10px);
+}
+
+.DogDetail div h2{
+    font-family: 'JelleeBold';
+    font-size: 1.24em;
 }
 
 .DogDetail img{
     width: 100%;
-    border-radius: 6px 6px 0 0;
+    border-radius: 5px 5px 0 0;
+    border-bottom: solid 2px black;
 }
 
 .HomeAndCreateLinks{
     display: flex;
     width: 300px;
     cursor: pointer;
-    justify-content: space-around;
+    justify-content: space-around;    
+    font-family: 'JelleeBold';
+    font-size: 1.24em;
+}
+
+.HomeAndCreateLinks a{
+    color: black;
+    text-decoration: none;
+    width: 100px;
+    border-radius: 6px;
+    background: transparent;
+    border: solid 2px black;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 1rem;
+    cursor: pointer;
 }
