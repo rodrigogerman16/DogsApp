@@ -1,13 +1,16 @@
 .DogCardContainer{
     padding: 2em;
     border-radius: 8px;
-    border: solid 1px black;
+    border: solid 2px black;    
     backdrop-filter: blur(10px);
+    background-color: rgb(22.75%, 66.67%, 100%, 0.5);
+    height: 430px;
+    position: relative;
 }
 
 .DogCardImg {
     height: 200px;
-    border: solid 1px black;
+    border: solid 2px black;
     border-radius: 4px;
 }
 
@@ -16,13 +19,57 @@
     height: 100%;
 }
 
-.DogCardDescription a{
+.DogCardContainer a{
     text-decoration: none;
     cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    left: 2em;
+}
+
+.DogCardContainer h4:hover{
+    background-color: rgb(22.75%, 66.67%, 100%, 1);
+}
+.DogCardContainer h4{
     color: black;
+    border-radius: 6px;
+    background: transparent;
+    border: solid 2px black;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 1rem;
+    font-family: 'JelleeBold';
 }
 
 .DogCardWeight{
     display: flex;
     justify-content: space-around;
+}
+
+.DogCardWeight .WeightLeft{
+    position: absolute;
+    bottom: 6em;
+    left: 2em;
+}
+
+.DogCardWeight .WeightRight{
+    position: absolute;
+    bottom: 4.5em;
+    left: 2em;
+}
+.DogCardDescription{
+    text-align: left;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+.DogCardDescription p{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    position: absolute;
+    top: 20em;
+    right: 2em;
+    left: 2em;
 }
