@@ -14,7 +14,7 @@ const DogDetail = (props) =>{
 
     const selectedDog = useSelector((state) => state.dogs);
     const dog = selectedDog[0]
-    console.log(dog)
+    const dogTempers = dog !== undefined && 'temper' in dog ? dog.temper.join(', ') : '';
     return(
         
         <div>
@@ -26,7 +26,7 @@ const DogDetail = (props) =>{
                     </div>
                     <div>
                         <h2>{dog.name}</h2> 
-                        <p>{dog.createdInDb === true ? dog.temper.map(t => t.name) : dog.temper.join(', ')}</p>
+                        <p>{dog.createdInDb === true ? dog.temper.map(t => t.name) : dogTempers}</p>
                         <div>
                             <p>Weight: {dog.weightMin}kg - {dog.weightMax}kg</p>
                         </div>
