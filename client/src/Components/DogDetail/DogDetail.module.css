@@ -3,9 +3,9 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 470px));
     height: 100vh;
     justify-content: center;
-    background-image: url(../Img/homebackground.jpg);
-    background-size: 500px;  
     padding: 0 2em;
+    color: white;
+    background-color: rgb(22.75%, 66.67%, 100%);
 }
 
 .DogDetail{
@@ -14,39 +14,37 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    border: solid 2px black;
+    border: solid 2px white;
     border-radius: 6px;
     padding: 0 0 2em;
     backdrop-filter: blur(10px);
 }
 
 .DogDetail div h2{
-    font-family: 'JelleeBold';
     font-size: 1.24em;
 }
 
 .DogDetail img{
     width: 100%;
     border-radius: 5px 5px 0 0;
-    border-bottom: solid 2px black;
+    border-bottom: solid 2px white;
 }
 
 .HomeAndCreateLinks{
     display: flex;
     width: 300px;
     cursor: pointer;
-    justify-content: space-around;    
-    font-family: 'JelleeBold';
+    justify-content: space-around;
     font-size: 1.24em;
 }
 
 .HomeAndCreateLinks a{
-    color: black;
+    color: white;
     text-decoration: none;
     width: 100px;
     border-radius: 6px;
     background: transparent;
-    border: solid 2px black;
+    border: solid 2px white;
     text-align: center;
     padding: 5px 0;
     font-size: 1rem;
