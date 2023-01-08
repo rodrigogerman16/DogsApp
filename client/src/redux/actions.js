@@ -70,19 +70,9 @@ export function getTemperaments(){
 } 
 
 export function createDog(payload){
-    return async function(dispatch){
-        try {
-            const postDog = await axios.post('http://localhost3001/dogs', payload);
-            return dispatch({
-                type: CREATE_DOG,
-                payload: postDog
-            })
-        } catch (error) {
-            dispatch({
-                type: CREATE_DOG,
-                payload: error.response
-            })
-        }
+    return async function(){
+            const postDog = await axios.post('http://localhost:3001/dogs', payload);
+            return postDog        
     }
 }
 
