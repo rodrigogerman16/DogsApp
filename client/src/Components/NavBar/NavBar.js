@@ -37,15 +37,15 @@ const NavBar = ({setCurrentPage, setOrden}) =>{
     function handleFilterByStored(e) {
         e.preventDefault();        
         setCurrentPage(1);
-        dispatch(filterByStored(e.target.value));
         setOrden(e.target.value);
+        dispatch(filterByStored(e.target.value));
     }
 
     function handleFilterByTemps(e){
         e.preventDefault();        
         setCurrentPage(1);
-        dispatch(filterByTemp(e.target.value));
         setOrden(e.target.value);
+        dispatch(filterByTemp(e.target.value));
     }
 
     function handleSubmit(e){
@@ -88,14 +88,14 @@ const NavBar = ({setCurrentPage, setOrden}) =>{
             <div>
                 <select onChange={e => handleFilterByTemps(e)}>
                     <option value="" selected disabled hidden>Temperaments</option>
-                    <option value="temper">All</option>
+                    <option value="all">All</option>
                     {allTemps.map(temp => <option value={temp.name} key={temp.id}>{temp.name}</option>)}
                 </select>
             </div>
             
             <div>
                 <select onChange={e => handleSortByName(e)}>
-                    <option selected disabled hidden>Sort By Name</option>
+                    <option selected disabled hidden>Name</option>
                     <option value="asc" >A-Z</option>
                     <option value="desc">Z-A</option>
                 </select>
@@ -103,7 +103,7 @@ const NavBar = ({setCurrentPage, setOrden}) =>{
 
             <div>
                 <select onChange={e => handleSortByWeight(e)}>
-                    <option value='selected' selected disabled hidden>Sort By Weight</option>
+                    <option value='selected' selected disabled hidden>Weight</option>
                     <option value="asc">Lowest</option>
                     <option value="desc">Highest</option>
                 </select>
@@ -111,7 +111,7 @@ const NavBar = ({setCurrentPage, setOrden}) =>{
 
             <div>
                 <Link to='/create'>
-                        <p>Create New Dog</p>
+                        <span>+</span>
                 </Link>
             </div>
         </div>
