@@ -1,7 +1,6 @@
 .HomeContainer{
-    background-image: url(../Img/homebackground.jpg);
-    background-size: 500px;
-    min-height: 100vh;
+    min-height: 100vh;    
+    background-color: rgb(22.75%, 66.67%, 100%);
 }
 
 .AllDogsContainer{
