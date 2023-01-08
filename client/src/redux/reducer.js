@@ -47,10 +47,10 @@ function rootReducer(state = initialState, action){
         };
 
         case FILTER_BY_TEMP:
-            const allDogs = [...state.allDogs];
+            const allDogs = state.allDogs;
             const filterByTemp = action.payload === 'all' ? 
             allDogs :
-            allDogs.filter(dog => dog.temperaments?.find(temp => temp.name === action.payload || temp === action.payload))
+            allDogs.filter(dog => dog.temper?.find(temper => temper.name === action.payload || temper === action.payload))
             return {
                 ...state, 
                 dogs: filterByTemp 
@@ -58,9 +58,9 @@ function rootReducer(state = initialState, action){
         ;
 
         case FILTER_BY_STORED:
-            const dogFilter = action.payload === "db" ? 
-            state.allDogs.filter(dog => dog.createdInDb) : 
-            state.allDogs.filter(dog => !dog.createdInDb)
+            const dbDogs = state.allDogs.filter(dog => dog.createdInDb);
+            const apiDogs =  state.allDogs.filter(dog => !dog.createdInDb);
+            const dogFilter = action.payload === 'db' && dbDogs.length ? dbDogs : apiDogs
             return {
                 ...state,
                 dogs: action.payload === "all" ? state.allDogs : dogFilter
