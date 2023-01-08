@@ -1,16 +1,15 @@
 .DogCardContainer{
-    padding: 2em;
+    padding: 1em;
     border-radius: 8px;
-    border: solid 2px black;    
-    backdrop-filter: blur(10px);
-    background-color: rgb(22.75%, 66.67%, 100%, 0.5);
+    border: solid 2px white;
+    color:white;
     height: 430px;
     position: relative;
 }
 
 .DogCardImg {
     height: 200px;
-    border: solid 2px black;
+    border: solid 2px white;
     border-radius: 4px;
 }
 
@@ -24,22 +23,23 @@
     cursor: pointer;
     position: absolute;
     bottom: 0;
-    width: 80%;
-    left: 2em;
+    width: 90%;
+    left: 1em;
 }
 
 .DogCardContainer h4:hover{
-    background-color: rgb(22.75%, 66.67%, 100%, 1);
+    background-color: rgb(130, 201, 255);
 }
 .DogCardContainer h4{
     color: black;
     border-radius: 6px;
     background: transparent;
-    border: solid 2px black;
+    border: solid 2px white;
     text-align: center;
     padding: 5px 0;
     font-size: 1rem;
     font-family: 'JelleeBold';
+    background-color: white;
 }
 
 .DogCardWeight{
@@ -50,13 +50,13 @@
 .DogCardWeight .WeightLeft{
     position: absolute;
     bottom: 6em;
-    left: 2em;
+    left: 1em;
 }
 
 .DogCardWeight .WeightRight{
     position: absolute;
     bottom: 4.5em;
-    left: 2em;
+    left: 1em;
 }
 .DogCardDescription{
     text-align: left;
@@ -69,7 +69,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     position: absolute;
-    top: 20em;
-    right: 2em;
-    left: 2em;
+    top: 18em;
+    right: 1em;
+    left: 1em;
 }
