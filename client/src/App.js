@@ -5,6 +5,8 @@ import DogDetail from './Components/DogDetail/DogDetail';
 import CreateDog from './Components/CreateDog/CreateDog';
 import NotFound from './Components/NotFound/NotFound';
 import { Switch, Route } from 'react-router-dom';
+import axios from 'axios';
+axios.defaults.baseURL = 'https://dogsapp-production.up.railway.app/'
 
 function App() {
   return (
