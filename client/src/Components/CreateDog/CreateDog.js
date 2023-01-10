@@ -15,10 +15,10 @@ const validate = (input)=>{
     if(input.temperaments.length > 6) errors.temperaments = `You can't select more than 7 temperaments`
     if(input.weightMin < 1)errors.weightMin = 'Value must be a positive number'
     if(input.weightMin > 70 )errors.weightMin = 'Min value must be less than 70 kg'
-    if(input.weightMin > input.weightMax) errors.weightMin = 'Min value must be less than Max value'
+    if(parseInt(input.weightMin) > parseInt(input.weightMax)) errors.weightMin = 'Min value must be less than Max value'
     if(input.weightMax < 1 )errors.weightMax = 'Value must be a positive number'
     if(input.weightMax > 100)errors.weightMax = 'Max value must be less than 100 kg'
-    if(input.weightMax < input.weightMin)errors.weightMax = 'Max value must be higher than Min value'
+    if(parseInt(input.weightMax) < parseInt(input.weightMin))errors.weightMax = 'Max value must be higher than Min value'
     if(input.heightMin < 1 )errors.heightMin = 'Value must be a positive number'
     if(input.heightMin > 100)errors.heightMin='Min value must be less than 100 kg'
     if(parseInt(input.heightMin) > parseInt(input.heightMax))errors.heightMin = 'Min value must be less than Max value'
