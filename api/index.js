@@ -5,7 +5,7 @@ const { PORT } = process.env
 
 
 conn.sync({ force: true }).then(() => {
-  server.listen(process.env.PORT, () => {
-    console.log('%s listening at procces.env.PORT'); // eslint-disable-line no-console
+  server.listen(PORT, () => {
+    console.log('%s listening at', procces.env.PORT); // eslint-disable-line no-console
   });
 });
