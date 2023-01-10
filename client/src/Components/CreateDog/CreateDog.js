@@ -11,7 +11,7 @@ const validate = (input)=>{
     if(input.name && input.name.length < 3) errors.name = 'Name must contain between 3 and 30 characters'
     if(input.name && input.name.length > 30) errors.name = 'Name must contain between 3 and 30 characters'
     if(input.name && !/^[a-zA-Z\s]+$/.test(input.name)) errors.name = 'Invalid name, must only contain letters'
-    if(!input.temperaments) errors.temperaments = 'Choose a temperament'
+    if(!input.temperaments.length) errors.temperaments = 'Choose a temperament'
     if(input.temperaments.length > 6) errors.temperaments = `You can't select more than 7 temperaments`
     if(input.weightMin < 1)errors.weightMin = 'Value must be a positive number'
     if(input.weightMin > 70 )errors.weightMin = 'Min value must be less than 70 kg'
