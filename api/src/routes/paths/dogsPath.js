@@ -1,6 +1,6 @@
 const express = require("express");
 const {Dog, Temper} = require("../../db");
-const { getAllDogs } = require("../controllers/dogsController");
+const { getAllDogs } = require("../getDataFunctions/getDataFunctions");
 
 const dogsPath = express();
 
@@ -51,7 +51,7 @@ dogsPath.post('/',async (req, res) =>{
             createdInDb,
             temperaments
         } = req.body        
-
+        
         const newDog = await Dog.create({
             name,
             weightMin,
