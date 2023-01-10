@@ -21,10 +21,10 @@ const validate = (input)=>{
     if(input.weightMax < input.weightMin)errors.weightMax = 'Max value must be higher than Min value'
     if(input.heightMin < 1 )errors.heightMin = 'Value must be a positive number'
     if(input.heightMin > 100)errors.heightMin='Min value must be less than 100 kg'
-    if(input.heightMin > input.heightMax)errors.heightMin = 'Min value must be less than Max value'
+    if(parseInt(input.heightMin) > parseInt(input.heightMax))errors.heightMin = 'Min value must be less than Max value'
     if(input.heightMax < 1 )errors.heightMax = 'Value must be a positive number'
     if(input.heightMax > 150)errors.heightMax='Max value must be less than 150 kg'
-    if(input.heightMax < input.heightMin)errors.heightMax = 'Max value must be higher than Min value'
+    if(parseInt(input.heightMax) < parseInt(input.heightMin))errors.heightMax = 'Max value must be higher than Min value'
     if(input.lifespan < '1') errors.lifespan = 'The age must be a positive number '
     if(input.lifespan > '80')errors.lifespan = 'the value must be less than 80 years'
     return errors
