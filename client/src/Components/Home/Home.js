@@ -3,7 +3,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {
     getDogs,
     getTemperaments,
-    //createDog,
 } from '../../redux/actions';
 import DogCard from "../DogCard/DogCard";
 import image from '../Img/dog.png'
