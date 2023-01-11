@@ -103,7 +103,7 @@
     .LogginImg{
         grid-area: unset;
         position: absolute;
-        top: 9.5em;
+        top: 10.5em;
         margin: auto;
         width: 300px;
         place-self: center;
