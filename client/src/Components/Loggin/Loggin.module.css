@@ -66,14 +66,11 @@
         margin: auto; 
     }
     .LogginDescription h2{
-        font-family: 'JelleeBold';
-        position: absolute;
-        top: 40px;
+        position: relative;
+        RIGHT: 0;
         left: 0;
-        right: 0;
-        font-size: 3rem;
-        padding: 0 1em;
-        margin: auto;
+        padding: 0;
+        bottom: 6em;
     }
 
     .LogginDescription a{
@@ -93,19 +90,20 @@
     }
 
     .LogginDescription h4{
-        position: absolute;
-        bottom: 4.2em;
-        left: 0;
-        right: 0;
-        padding: 0 1em;
-        margin:auto;                
-        font-weight: 500;
+        bottom: 5.2em;
         font-size: 1.5rem;
+        font-weight: 500;
+        left: 0;
+        margin: auto;
+        padding: 0 1em;
+        position: absolute;
+        right: 0;
     }
 
     .LogginImg{
         grid-area: unset;
         position: absolute;
+        top: 9.5em;
         margin: auto;
         width: 300px;
         place-self: center;
